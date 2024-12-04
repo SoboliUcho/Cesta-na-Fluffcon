@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'mapy';
+    src: url('mapy.woff') format('woff');
+}
+:root {
+    --bs-green: #04bc38;
+    --bs-green-light: #2a2c2b;
+    --bs-red: #ff0000;
+    --bs-secondary: #f0f0f0;
+}
+
+#mapa {
+    transition: filter 0.5s opacity 0.5s;
+    height: 100%;
+    cursor: default;
+    z-index: 2;
+    /* z-index: -1; */
+}
+#mapa_img {
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    z-index: 2;
+}
+
+.gray {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+#mapa_img .button-group button {
+    background-color: var(--bs-green);
+    color: var(--bs-green-light);
+}
+
+#mapa_img .zoom * {
+    background-color: var(--bs-green);
+    color: var(--bs-green-light);
+}
+
+#mapa_img .compass {
+    background-color: var(--bs-green);
+    color: var(--bs-green-light);
+}
+
+.leaflet-container a {
+    color: #6b7580;
+}
+
+.leaflet-left .leaflet-control {
+    margin-left: 0;
+}
+
+.leaflet-bottom .leaflet-control {
+    margin-bottom: 0px;
+}
+
+.leaflet-top {
+    z-index: 5;
+}
+
+.leaflet-control {
+    z-index: 5;
+}
+
+.leaflet-bottom {
+    z-index: 5;
+}
+
+.leaflet-pane {
+    z-index: 2;
+}
+
+#control {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 3;
+}
+
+.zoom {
+    background-color: var(--bs-green);
+    color: var(--bs-green-light);
+    width: 64px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.button {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    width: 31px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 27px;
+    font-family: mapy;
+    font-style: normal;
+    font-weight: 400;
+    outline: 0;
+}
+
+#white_line {
+    width: 1px;
+    background-color: var(--bs-green-light);
+    border-top: 3px solid var(--bs-green);
+    border-bottom: 3px solid var(--bs-green);
+}
+
+.priblizeni {
+    display: none;
+    position: absolute;
+}
+
+.zoom_level {
+    display: block;
+    background-color: var(--bs-green);
+    width: 64px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 12px;
+    padding-bottom: 7px;
+    cursor: pointer;
+
+}
+
+.zoom_level:hover {
+    background-color: var(--bs-secondary);
+    color: var(--bs-green-light);
+    background-color: var(--bs-red);
+}
+
+.zoom:hover .priblizeni {
+    display: block;
+}
+
+.compass {
+    margin-top: 15px;
+    width: 63px;
+    height: 63px;
+    background: url(../img/compass-n.png) center center no-repeat #fff;
+    border-radius: 100%;
+    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .3);
+    background-color: var(--bs-green);
+    color: var(--bs-green-light);
+}
+
+.pozice {
+    background-color: var(--bs-green);
+    color: var(--bs-green-light);
+    font-weight: bold;
+    align-self: end;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+}
+.pozice:hover {
+    color: var(--bs-green-light);
+    background-color: var(--bs-red);
+}
+.button:hover{
+    color: var(--bs-green-light);
+    background-color: var(--bs-red);
+}
+#tlacitka_pozice {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 3;
+    flex-direction: row;    
+    flex-wrap: wrap;
+    gap: 15px;
+}
